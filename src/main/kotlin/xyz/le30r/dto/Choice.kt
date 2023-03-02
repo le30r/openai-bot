@@ -7,4 +7,4 @@ import kotlinx.serialization.Serializable
 data class Choice(val index:Int,
                   val message:Message,
                   @SerialName("finish_reason")
-                  val finishReason:String)
+                  val finishReason:String?)
