@@ -1,10 +1,10 @@
-package xyz.le30r.dto
+package xyz.le30r.bot.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Choice(val index:Int,
-                  val message:Message,
+                  val message: Message,
                   @SerialName("finish_reason")
                   val finishReason:String?)

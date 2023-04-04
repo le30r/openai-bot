@@ -1,4 +1,4 @@
-package xyz.le30r.dto
+package xyz.le30r.bot.dto
 
 import kotlinx.serialization.Serializable
 

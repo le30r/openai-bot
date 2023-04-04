@@ -42,7 +42,10 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
     implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
     implementation("io.ktor:ktor-client-auth:$ktor_version")
-
+    implementation("org.postgresql:postgresql:42.5.4")
+    implementation("org.slf4j:slf4j-api:2.0.5")
+    implementation("org.apache.logging.log4j:log4j-core:2.20.0")
+    implementation("org.apache.logging.log4j:log4j-slf4j2-impl:2.20.0")
     testImplementation(kotlin("test"))
 }
 

@@ -1,4 +1,4 @@
-package xyz.le30r.dto
+package xyz.le30r.bot.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -8,7 +8,8 @@ data class OpenAIResponse(val id:String,
                           @SerialName("object")
                           val chatObject:String,
                           val created:Int,
-                          val choices:Array<Choice>) {
+                          val choices:Array<Choice>,
+                          val usage: UsageDto) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
