@@ -1,4 +1,3 @@
-import groovy.xml.dom.DOMCategory.attributes
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -26,7 +25,7 @@ repositories {
 tasks.withType<Jar> {
     manifest {
         attributes(mapOf(
-            "Main-Class" to "xyz.le30r.ApplicationKt"
+            "Main-Class" to "xyz.le30r.bot.ApplicationKt"
         ))
     }
 }
@@ -60,5 +59,5 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
 }
 
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "17"
 }
