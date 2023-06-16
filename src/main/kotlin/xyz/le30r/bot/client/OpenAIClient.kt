@@ -40,7 +40,7 @@ class OpenAIClient {
     suspend fun nextMessage(history: List<Message>): OpenAIResponse {
         val request = httpClient.post("https://api.openai.com/v1/chat/completions") {
             contentType(ContentType.Application.Json)
-            setBody(OpenAIRequest("gpt-3.5-turbo", messages = history))
+            setBody(OpenAIRequest("gpt-3.5-turbo-0613", messages = history))
         }
         logger.debug(request.requestTime.toString())
         return request.body()
@@ -50,7 +50,7 @@ class OpenAIClient {
     suspend fun nextMessageDebug(history: List<Message>): Message {
         val text = httpClient.post("https://api.openai.com/v1/chat/completions") {
             contentType(ContentType.Application.Json)
-            setBody(OpenAIRequest("gpt-3.5-turbo-0301", messages = history))
+            setBody(OpenAIRequest("gpt-3.5-turbo-0613", messages = history))
         }.bodyAsText()
         println(text)
         return Message("", "")

@@ -118,7 +118,7 @@ class Application {
         val token = strings[0]
         val id = it.chat.id
         if (tokenService.isValidToken(token)) {
-            if (userService.addUser(id.toString(), 0) == 0) {
+            if (userService.addUser(id.chatId.toString(), 0) != 0) {
                 usageService.initUser(id.chatId.toString())
                 bot.executeAsync(SendTextMessage(id, "Accessed"))
             } else {
@@ -150,7 +150,7 @@ class Application {
     }
 
     private suspend fun processMessage(message: CommonMessage<MessageContent>): Unit = runBlocking {
-        if (!userService.isUserPresented(message.from?.id.toString() ?: "")) {
+        if (!userService.isUserPresented(message.from?.id?.chatId.toString() ?: "")) {
             bot.execute(SendTextMessage(message.chat.id, "Sorry, you are not in whitelist"))
             return@runBlocking
         }
